@@ -98,3 +98,53 @@ int ifper(int num3)
     }
     return 1;
 }
+\\2
+
+
+#include <stdio.h>
+#include<string.h>
+#include<ctype.h>
+
+int main()
+{
+    char stt[100];
+    int a, i=0, words=1, vowels=0, consonants=0, space=0, special=0, c=0;
+    gets(stt);
+    printf("%s\n", stt);
+    a = strlen(stt);
+    while (stt[i] != '\0')
+    {
+        if (i==' ')
+        {
+            space++;
+            words++;
+        }
+        else if (isalpha(i))
+        {
+            if (i=='a' || i=='e' || i=='i' || i=='o' || i=='u')
+            {
+                vowels++;
+            }
+            else
+            {
+                consonants++;
+            }
+        }
+        else if (isdigit(i))
+        {
+            continue;    
+        }
+        else 
+        {
+            special++;
+        }
+        ++i;
+    }
+    printf("Words = %d", words);
+    printf("\nVowels = %d", vowels);
+    printf("\nConsonants = %d", consonants);
+    printf("\nSpace = %d", space);
+    printf("\nSpecial = %d", special);
+    
+    return 0;
+}
