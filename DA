@@ -1,0 +1,100 @@
+#include <stdio.h>
+
+int ifprime(int num1);
+void printprime(int num11);
+int ifarm(int num2);
+void printarm(int num22);
+int ifper(int num3);
+void printper(int num33);
+
+int main() 
+{
+    int a;
+    scanf("%d", &a);
+    printprime(a);
+    printf("\n");
+    printarm(a);
+    printf("\n");
+    printper(a);
+    return 0;
+}
+
+void printprime(int num11)
+{
+    if (ifprime(num11))
+    {
+        printf("%d is a prime number", num11);
+    }
+    else
+    {
+        printf("%d is not a prime number", num11);
+    }
+}
+int ifprime(int num1)
+{
+    int i;
+    for (i=2; i<num1; i++)
+    {
+        if (num1%i==0)
+        {
+            return 0;
+        }
+    }
+    return 1;
+}
+
+void printarm(int num22)
+{
+    if (ifarm(num22))
+    {
+        printf("%d is a armstrong number", num22);
+    }
+    else
+    {
+        printf("%d is not a armstrong number", num22);
+    }
+}
+
+int ifarm(int num2)
+{
+    int r, sum=0, temp;
+    for(temp=num2; num2!=0; num2=num2/10)
+    {
+        r=num2%10;
+        sum=sum+(r*r*r);
+    }
+    if (sum=temp)
+    {
+        return 0;
+    }
+    return 1;
+}
+
+void printper(int num33)
+{
+    if (ifper(num33))
+    {
+        printf("%d is a perfect number", num33);
+    }
+    else
+    {
+        printf("%d is not a perfect number", num33);
+    }
+}
+
+int ifper(int num3)
+{
+    int i, sum=0;
+    for (i=1; i<num3; i++)
+    {
+        if (num3%i==0)
+        {
+            sum=sum+1;
+        }
+    }
+    if (num3=sum)
+    {
+        return 0;
+    }
+    return 1;
+}
